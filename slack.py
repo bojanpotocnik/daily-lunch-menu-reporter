@@ -105,8 +105,11 @@ class SlackClient(slackclient.SlackClient):
             msg.append(f"Dnevni meni za {slovenian_day_mapping[date.isoweekday()]}, {date:%d.%m.%Y}:\n")
             for restaurant, week_menu in data.items():
                 if week_menu[date]:
-                    msg.append(f" *{restaurant}*:\n")
+                    msg.append(f" *<{restaurant.url}|{restaurant}>* _({restaurant.price})_:\n")
                     for item in week_menu[date]:
+                        # Remove salad as it is included in every meal
+                        item = item.replace(", solata", "")
+
                         msg.append(f"    • {item}\n")
 
         msg = "".join(msg)
