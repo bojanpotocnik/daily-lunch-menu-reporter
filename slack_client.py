@@ -2,16 +2,17 @@ import datetime
 import os
 import traceback
 import warnings
-from typing import Optional, List, Tuple, Dict, Set
+from typing import Optional, List, Tuple, Dict
 
-import slackclient
+# noinspection PyPackageRequirements
+import slack
 
 from restaurants import Restaurants
 
 __author__ = "Bojan Potočnik"
 
 
-class SlackClient(slackclient.SlackClient):
+class SlackClient(slack.WebClient):
 
     def __init__(self, token: Optional[str], channel: str, proxies=None, *, token_env_var: str = None):
         """
@@ -78,7 +79,7 @@ class SlackClient(slackclient.SlackClient):
         from collections import OrderedDict
 
         # Dictionaries are not sorted. Extract and sort dates.
-        dates: Set[datetime.date] = sorted({
+        dates: List[datetime.date] = sorted({
             date for week_menu in data.values() for date in week_menu
         })
 
