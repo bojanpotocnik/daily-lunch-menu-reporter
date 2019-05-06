@@ -56,8 +56,7 @@ class SlackClient(slack.WebClient):
         """
         # noinspection PyBroadException
         try:
-            ret = self.api_call(
-                "chat.postMessage",
+            ret = self.chat_postMessage(
                 channel=channel or self.channel,
                 text=message
             )

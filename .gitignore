@@ -2,9 +2,15 @@
 .idea/misc.xml
 .idea/other.xml
 .idea/deployment.xml
+.idea/workspace.xml
 
 # PyCharm Plugins
 .idea/libraries/R_User_Library.xml
 
 # Python
 venv
+__pycache__/
+
+# Local cache and properties
+daily_menus/
+.failed_fnx.si_images/

@@ -2,3 +2,5 @@ aiohttp
 lxml
 cssselect
 slackclient>=2.0.0  # `import slack`
+imageio
+numpy
