@@ -7,7 +7,7 @@ import aiohttp
 import lxml.html
 
 from restaurants import Restaurants
-from slack import SlackClient
+from slack_client import SlackClient
 
 __author__ = "Bojan Potočnik"
 

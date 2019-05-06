@@ -5,3 +5,6 @@
 
 # PyCharm Plugins
 .idea/libraries/R_User_Library.xml
+
+# Python
+venv
